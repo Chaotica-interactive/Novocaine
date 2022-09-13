@@ -64,5 +64,8 @@ smooth_rotation = true
 [node name="Function_Crouch_movement" parent="FPController/RightHandController" index="2" instance=ExtResource( 10 )]
 
 [node name="PlayerBody" parent="FPController" instance=ExtResource( 4 )]
+player_radius = 0.2
+player_height_min = 0.4
+eye_forward_offset = 0.4
 
 [editable path="FPController"]
