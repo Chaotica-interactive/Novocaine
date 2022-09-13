@@ -1,4 +1,4 @@
-[gd_scene load_steps=11 format=2]
+[gd_scene load_steps=13 format=2]
 
 [ext_resource path="res://assets/Materials/DEBUG/LEFT_HAND_DEBUG.tres" type="Material" id=1]
 [ext_resource path="res://assets/Materials/DEBUG/RIGHT_HAND_DEBUG.tres" type="Material" id=2]
@@ -9,6 +9,13 @@
 [ext_resource path="res://addons/godot-xr-tools/functions/Function_Turn_movement.tscn" type="PackedScene" id=7]
 [ext_resource path="res://addons/godot-xr-tools/functions/Function_Direct_movement.tscn" type="PackedScene" id=8]
 [ext_resource path="res://addons/godot-xr-tools/functions/Function_Crouch_movement.tscn" type="PackedScene" id=9]
+[ext_resource path="res://assets/Models/UIscreen.obj" type="ArrayMesh" id=10]
+
+[sub_resource type="SpatialMaterial" id=2]
+flags_transparent = true
+flags_unshaded = true
+flags_no_depth_test = true
+albedo_color = Color( 1, 1, 1, 0 )
 
 [sub_resource type="SphereMesh" id=1]
 radius = 0.15
@@ -20,9 +27,16 @@ height = 0.3
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 2.38419e-07, -0.877465, -0.00488827 )
 
 [node name="ARVRCamera" parent="player" index="1"]
+near = 0.01
 far = 1000.0
 
 [node name="vr_common_shader_cache" parent="player/ARVRCamera" index="0" instance=ExtResource( 3 )]
+
+[node name="MeshInstance" type="MeshInstance" parent="player/ARVRCamera" index="1"]
+transform = Transform( 0.1, 0, 0, 0, -4.37114e-09, -0.1, 0, 0.1, -4.37114e-09, 0, 0, -0.0933884 )
+cast_shadow = 0
+mesh = ExtResource( 10 )
+material/0 = SubResource( 2 )
 
 [node name="leftmesh" type="MeshInstance" parent="player/LeftHandController" index="0"]
 mesh = SubResource( 1 )
