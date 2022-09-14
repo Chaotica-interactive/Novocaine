@@ -1,14 +1,21 @@
-[gd_scene load_steps=4 format=2]
+[gd_scene load_steps=5 format=2]
 
 [ext_resource path="res://addons/godot-xr-tools/assets/HandBlendTree.tres" type="AnimationNodeBlendTree" id=1]
 [ext_resource path="res://addons/godot-xr-tools/assets/Hand.gd" type="Script" id=2]
 [ext_resource path="res://addons/godot-xr-tools/assets/LeftHand.glb" type="PackedScene" id=3]
+[ext_resource path="res://assets/Materials/DEBUG/LEFT_HAND_DEBUG.tres" type="Material" id=4]
 
 [node name="RightHand" type="Spatial"]
 script = ExtResource( 2 )
 
 [node name="RightHand" parent="." instance=ExtResource( 3 )]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, -1, 0, 0, 0 )
+
+[node name="Skeleton" parent="RightHand/Armature_Left" index="0"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0217267, -0.0243117, -0.128491 )
+
+[node name="Hand_Left" parent="RightHand/Armature_Left/Skeleton" index="0"]
+material/0 = ExtResource( 4 )
 
 [node name="AnimationTree" type="AnimationTree" parent="."]
 tree_root = ExtResource( 1 )
