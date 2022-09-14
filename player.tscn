@@ -25,9 +25,9 @@ height = 0.3
 
 [node name="player" parent="." instance=ExtResource( 4 )]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 2.38419e-07, -0.877465, -0.00488827 )
+near_z = 0.05
 
 [node name="ARVRCamera" parent="player" index="1"]
-near = 0.01
 far = 1000.0
 
 [node name="vr_common_shader_cache" parent="player/ARVRCamera" index="0" instance=ExtResource( 3 )]
