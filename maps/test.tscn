@@ -49,3 +49,14 @@ material/0 = ExtResource( 4 )
 
 [node name="CollisionShape2" type="CollisionShape" parent="Object_climbable"]
 shape = SubResource( 4 )
+
+[node name="Object_climbable2" parent="." instance=ExtResource( 5 )]
+transform = Transform( 3, 0, 0, 0, 0.01, 0, 0, 0, 1.01169, -1.04, 2, -7.22 )
+
+[node name="MeshInstance" type="MeshInstance" parent="Object_climbable2"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0 )
+mesh = SubResource( 3 )
+material/0 = ExtResource( 4 )
+
+[node name="CollisionShape2" type="CollisionShape" parent="Object_climbable2"]
+shape = SubResource( 4 )
