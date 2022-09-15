@@ -1,5 +1,6 @@
-[gd_scene load_steps=14 format=2]
+[gd_scene load_steps=15 format=2]
 
+[ext_resource path="res://addons/godot-xr-tools/functions/Function_Grapple_movement.tscn" type="PackedScene" id=1]
 [ext_resource path="res://addons/godot-xr-tools/misc/VR_Common_Shader_Cache.tscn" type="PackedScene" id=3]
 [ext_resource path="res://addons/godot-openxr/scenes/first_person_controller_vr.tscn" type="PackedScene" id=4]
 [ext_resource path="res://addons/godot-xr-tools/assets/PlayerBody.tscn" type="PackedScene" id=5]
@@ -45,10 +46,14 @@ strafe = true
 jump_button_id = 14
 
 [node name="Function_Pickup" parent="player/LeftHandController" index="2" instance=ExtResource( 14 )]
-grab_distance = 0.05
+grab_distance = 0.1
 ranged_enable = false
 
 [node name="LeftHand" parent="player/LeftHandController" index="3" instance=ExtResource( 11 )]
+
+[node name="Node" type="Node" parent="player/LeftHandController" index="4"]
+
+[node name="Function_Grapple_movement" parent="player/LeftHandController" index="5" instance=ExtResource( 1 )]
 
 [node name="Function_Turn_movement" parent="player/RightHandController" index="0" instance=ExtResource( 7 )]
 smooth_rotation = true
@@ -56,7 +61,7 @@ smooth_rotation = true
 [node name="Function_Crouch_movement" parent="player/RightHandController" index="1" instance=ExtResource( 9 )]
 
 [node name="Function_Pickup" parent="player/RightHandController" index="2" instance=ExtResource( 14 )]
-grab_distance = 0.05
+grab_distance = 0.1
 
 [node name="RightHand" parent="player/RightHandController" index="3" instance=ExtResource( 12 )]
 
