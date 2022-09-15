@@ -54,6 +54,7 @@ ranged_enable = false
 [node name="Node" type="Node" parent="player/LeftHandController" index="4"]
 
 [node name="Function_Grapple_movement" parent="player/LeftHandController" index="5" instance=ExtResource( 1 )]
+grapple_button_id = 7
 
 [node name="Function_Turn_movement" parent="player/RightHandController" index="0" instance=ExtResource( 7 )]
 smooth_rotation = true
@@ -64,6 +65,9 @@ smooth_rotation = true
 grab_distance = 0.1
 
 [node name="RightHand" parent="player/RightHandController" index="3" instance=ExtResource( 12 )]
+
+[node name="Function_Grapple_movement" parent="player/RightHandController" index="4" instance=ExtResource( 1 )]
+grapple_button_id = 7
 
 [node name="PlayerBody" parent="player" instance=ExtResource( 5 )]
 player_radius = 0.2
